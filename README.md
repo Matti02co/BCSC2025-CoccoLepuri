@@ -6,7 +6,7 @@ Blockchain and Smart Contracts 2025
 ## Istruzioni codice
 Nella repository sono presenti 2 file solidity: il file ```creazioneToken.sol```, che contiene i contratti che definiscono i due token utilizzati nello scenario e ```automatedMarketMaker.sol```, che contiene il contratto relativo all'AMM che gestisce il pool tra i due token, con le funzioni descritte nella relazione e in seguito.
 
-Dalla relazione in pdf sono comunque abbastanza chiari i passaggi da eseguire per utilizzare l'AMM.
+I passaggi necessari per utilizzare l'AMM sono comunque spiegati anche nell'ultimo capitolo della relazione in pdf.
 
 
 ### TokenA e TokenB
