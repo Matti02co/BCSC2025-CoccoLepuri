@@ -15,7 +15,7 @@ I passaggi necessari per utilizzare l'AMM sono comunque spiegati anche nell'ulti
 
 I contratti contenuti in ```creazioneToken.sol``` sono 2 e sono identici a parte per quanto riguarda il nome del contratto, il nome del token e il simbolo. 
 
-È necessario compilare il file e eseguire la deploy dei contratti su una rete per poter usufruire delle loro funzioni.
+È necessario compilare il file e eseguire il deploy dei contratti su una rete per poter usufruire delle loro funzioni.
 Nel nostro esempio i contratti TokenA e TokenB sono stati caricati sulla testnet Sepolia e sono accessibili rispettivamente agli address ```0x7844cd2bc2f99b574c7153f94ab1803b490a0512``` e ```0x5113d1e5849f0689987a8ec7bd18467caa2740a7```.
 Si ricorda tuttavia che il modifier ```onlyowner``` consente solo al proprietario di eseguire la mint in questo esempio.
 
