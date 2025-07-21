@@ -1,9 +1,12 @@
 # Analisi e comparazione dei sistemi DeFI che usano AMM e Liquidity Pools
+Blockchain and Smart Contracts 2025
+
+Università degli Studi di Cagliari
+
+Prof. Andrea Pinna
+
 Cocco Mattia 65336
 Lepuri Tomas 65358
-
-Blockchain and Smart Contracts 2025
-Prof. Andrea Pinna
 
 ## Istruzioni codice
 Nella repository sono presenti 2 file solidity: il file ```creazioneToken.sol```, che contiene i contratti che definiscono i due token utilizzati nello scenario e ```automatedMarketMaker.sol```, che contiene il contratto relativo all'AMM che gestisce il pool tra i due token, con le funzioni descritte nella relazione e in seguito.
