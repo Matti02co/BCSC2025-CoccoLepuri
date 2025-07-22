@@ -87,7 +87,7 @@ contract bcsc2025amm {
         }
     }
 
-    /// @notice Funzione di servizio per radice quadrata
+    /// @title Funzione di servizio per radice quadrata
     function sqrt(uint y) internal pure returns (uint z) {
         if (y > 3) {
             z = y;
@@ -101,6 +101,7 @@ contract bcsc2025amm {
         }
     }
 
+    /// @title Funzione di servizio per minimo tra due interi
     function min(uint x, uint y) internal pure returns (uint) {
         return x <= y ? x : y;
     }
