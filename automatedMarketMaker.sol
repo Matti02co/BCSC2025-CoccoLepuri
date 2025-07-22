@@ -3,6 +3,10 @@ pragma solidity ^0.8.7;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
+/// @title Automated Market Maker per BCSC 2025
+/// @notice Implementa un AMM con le sue funzioni di base
+/// @dev Le quantita di token prese in input da ogni funzione sono da intendersi in formato decimale a 18
+/// @custom:experimental Contratto sperimentale per BCSC 2025
 contract bcsc2025amm {
     IERC20 public tokenA;
     IERC20 public tokenB;
@@ -18,6 +22,7 @@ contract bcsc2025amm {
         tokenB = IERC20(_tokenB);
     }
 
+    /// @notice Permette di fornire TokenA e TokenB (liquidity) al pool in cambio di shares
     function mint(uint256 amountA, uint256 amountB) external returns (uint256 shares) {
         tokenA.transferFrom(msg.sender, address(this), amountA);
         tokenB.transferFrom(msg.sender, address(this), amountB);
@@ -39,6 +44,7 @@ contract bcsc2025amm {
         reserveB += amountB;
     }
 
+    /// @notice Permette di bruciare shares in cambio della relativa quantita di TokenA e TokenB
     function burn(uint256 shares) external returns (uint256 amountA, uint256 amountB) {
         require(liquidity[msg.sender] >= shares, "Non hai abbastanza quote");
 
@@ -54,6 +60,8 @@ contract bcsc2025amm {
         tokenB.transfer(msg.sender, amountB);
     }
 
+    /// @notice Permette di swappare un token per un altro, tra TokenA e TokenB
+    /// @param tokenIn Address del contratto del token che si sta swappando
     function swap(address tokenIn, uint256 amountIn) external returns (uint256 amountOut) {
         bool isAtoB = tokenIn == address(tokenA);
         require(isAtoB || tokenIn == address(tokenB), "INVALID_TOKEN");
@@ -79,6 +87,7 @@ contract bcsc2025amm {
         }
     }
 
+    /// @notice Funzione di servizio per radice quadrata
     function sqrt(uint y) internal pure returns (uint z) {
         if (y > 3) {
             z = y;
